@@ -21,6 +21,8 @@ WORKDIR /app
 
 COPY --from=builder /app/target/*.jar app.jar
 
+ENV JAVA_TOOL_OPTIONS="-Xms128m -Xmx256m -XX:+UseSerialGC -Xss512k"
+
 EXPOSE 8080
 
 ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-8080}"]
