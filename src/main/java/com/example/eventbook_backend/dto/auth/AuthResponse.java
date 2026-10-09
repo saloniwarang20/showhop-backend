@@ -1,0 +1,18 @@
+package com.example.eventbook_backend.dto.auth;
+
+import com.example.eventbook_backend.dto.user.UserResponse;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@Builder
+public class AuthResponse {
+
+    private String token;
+    private String tokenType;
+    private UserResponse user;
+}
